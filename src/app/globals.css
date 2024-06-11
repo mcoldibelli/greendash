@@ -1,5 +1,14 @@
 :root {
   --border-radius: 12px;
+  
+  --logo-color: rgb(100, 230, 100);
+  --bar-color: rgb(157,249,100);
+
+  --sidebar-bg: rgb(23, 24, 25);
+  --sidebar-bg-search: rgb(33,34,37);
+  
+  --text-primary: rgb(220, 220, 220);
+  --text-secondary: rgb(160, 160, 160);
 }
 
 * {
