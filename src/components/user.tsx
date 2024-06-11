@@ -3,14 +3,14 @@ import { RxExit } from "react-icons/rx";
 import styled from "styled-components";
 
 const UserContainer = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
   display: flex;
   align-items: center;
   font-size: 0.7em;
   margin: 1.5em 0;
   border-top: 2px solid var(--text-secondary);
-  width: 85%;
+  width: 100%;
   padding-top: 1.2em;
 
   img {
@@ -31,10 +31,10 @@ const UserInfo = styled.div`
 `;
 
 const ExitIcon = styled(RxExit)`
-  margin-right: 0.5em;
-  font-size: 1.5em;
   cursor: pointer;
-  margin-bottom: 1.5em;
+  margin-left: -20px;
+  margin-bottom: 2em;
+  font-size: 1.8em;
 
   &:hover {
     color: var(--logo-color);
@@ -45,13 +45,27 @@ const ExitIcon = styled(RxExit)`
   }
 `;
 
+const ProfileImage = styled(Image)`
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid var(--logo-color);
+    transition: 0.3s;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    transition: 0.3s;
+  }
+`;
+
 export function User() {
   return (
     <UserContainer>
-      <Image src="/mc.jpg" alt="User profile picture" width={50} height={50} />
+      <ProfileImage src="/mc.jpg" alt="User profile picture" width={50} height={50} />
       <UserInfo>
         <h3>Marcelo</h3>
-        <h3>marcelo@email.com</h3>
+        <h3>marcelo.coldibelli@gmail.com</h3>
       </UserInfo>
       <ExitIcon />
     </UserContainer>

@@ -1,14 +1,13 @@
 import styled from "styled-components";
-import { VictoryLabel, VictoryPie } from 'victory';
+import { VictoryPie } from 'victory';
 
+// Styled Components
 const SpaceUsageContainer = styled.div`
   background-color: var(--sidebar-bg-search);
   color: var(--text-primary);
-  position: absolute;
-  bottom: 7em;
-  height: 12em;
+  position: relative;
+  height: 14em;
   padding: 1em;
-  margin-right: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,11 +15,9 @@ const SpaceUsageContainer = styled.div`
   border-radius: var(--border-radius);
 
   p {
-    font-size: 0.95em;
+    font-size: 1em;
     text-align: center;
-  }
-
-  
+  }  
 `;
 
 const ButtonContainer = styled.div`
@@ -34,7 +31,7 @@ const StyledButton = styled.button`
   border: none;
   padding: 0.4em 0.8em;
   border-radius: var(--border-radius);
-  font-size: 0.8em;
+  font-size: 0.9em;
 
   &:hover {
     cursor: pointer;
@@ -47,30 +44,39 @@ const StyledButton = styled.button`
   }
 `;
 
-export function SpaceUsage() {
-  const value = 80;
+const ChartContainer = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+`;
+
+const CentralLabel = styled.div`
+  position: absolute;
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-primary);
+`;
+
+export function SpaceUsage({ usage }: { usage: number }) {
   return (
     <SpaceUsageContainer>
-      <p>Your team has used {value}% of your available space. Need more?</p>
-      <VictoryPie
-        data={[
-          { x: "", y: value },
-          { x: "", y: 100 - value },
-        ]}
-        colorScale={["#e6e6e6", "#000000"]}
-        innerRadius={80}
-        height={200}
-        standalone={true}
-        labelComponent={
-          <VictoryLabel
-            text={value + "%"}
-            style={{ fontSize: 30, fill: "#FFFFFF" }}
-            verticalAnchor="middle"
-            x={200}
-            y={100}
-          />
-        }
-      />
+      <p>Your team has used {usage}% of your available space. Need more?</p>
+      <ChartContainer>
+        <VictoryPie
+          data={[
+            { x: "", y: usage },
+            { x: "", y: 100 - usage },
+          ]}
+          colorScale={["#e6e6e6", "#000000"]}
+          innerRadius={80}
+          height={200}
+          standalone={true}
+        />
+        <CentralLabel>{`${usage}%`}</CentralLabel>
+      </ChartContainer>
       <ButtonContainer>
         <StyledButton>Dismiss</StyledButton>
         <StyledButton>Upgrade plan</StyledButton>

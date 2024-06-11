@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import styled from "styled-components"
+import styled from "styled-components";
 import Image from "next/image";
 import { SearchInputWithIcon } from "./searchInput";
 import { User } from "./user";
@@ -18,7 +18,7 @@ const SideNav = styled.nav`
   position: fixed;
   background-color: var(--sidebar-bg);
   color: var(--text-primary);
-  width: 240px;
+  width: 280px;
   height: 100vh;
   padding: 1em;
 `;
@@ -26,10 +26,7 @@ const SideNav = styled.nav`
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
-
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   h1 {
     font-size: 1.4em;
@@ -40,8 +37,7 @@ const LogoContainer = styled.div`
 const MenuList = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 2em;
+  margin: 1em  0;
 
   span {
     display: flex;
@@ -51,19 +47,26 @@ const MenuList = styled.ul`
 
 const CounterBadge = styled.span`
   background-color: var(--sidebar-bg-search);
-  color: var(--text-primary);
   padding: 0.2em 0.4em;
   border-radius: var(--border-radius);
   font-size: 0.8em;
   font-weight: bold;
+  margin-left: auto;
 `;
 
-const MenuItem = styled.li`
+const SelectedDot = styled(GoDotFill)`
+  margin-right: 0.5em;
+  color: var(--logo-color);
+`;
+
+const MenuItem = styled.li<{ isSelected: boolean }>`
   display: flex;
   align-items: center;
   padding: 0.5em;
   cursor: pointer;
   border-radius: var(--border-radius);
+  background-color: ${({ isSelected }) => (isSelected ? "var(--text-secondary)" : "transparent")};
+  color: ${({ isSelected }) => (isSelected ? "var(--logo-color)" : "inherit")};
 
   &:hover {
     background-color: var(--text-secondary);
@@ -77,51 +80,62 @@ const MenuItem = styled.li`
 
   svg {
     margin-right: 0.5em;
-  }
-
-  ${CounterBadge} {
-    margin-left: auto;
+    color: ${({ isSelected }) => (isSelected ? "var(--logo-color)" : "inherit")};
   }
 `;
 
-
 export function SideMenu() {
   const [searchValue, setSearchValue] = useState("");
+  const [selectedMenuItem, setSelectedMenuItem] = useState("Home");
+  const tasksCounter = 10;
+  const [usage, setUsage] = useState(40);
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
 
+  const handleMenuItemClick = (menuItem: string) => {
+    setSelectedMenuItem(menuItem);
+  };
+
+  const menuItems = [
+    { name: "Home", icon: <LuBarChart2 /> },
+    { name: "Dashboard", icon: <HiOutlineChartSquareBar /> },
+    { name: "Projects", icon: <LuLayers /> },
+    { name: "Tasks", icon: <RiCheckboxMultipleLine />, badge: tasksCounter },
+    { name: "Reporting", icon: <BiPieChartAlt2 /> },
+    { name: "Users", icon: <FiUsers /> },
+    { name: "Support", icon: <HiOutlineSupport /> },
+    { name: "Settings", icon: <BsGear /> },
+  ];
+
   return (
     <SideNav>
       <LogoContainer>
-        <Image
-          src="/logo.png"
-          alt="logo"
-          width={40}
-          height={40}
-        />
+        <Image src="/logo.png" alt="logo" width={40} height={40} />
         <h1>Greendash</h1>
       </LogoContainer>
-      <SearchInputWithIcon
-        value={searchValue}
-        onChange={handleSearchChange}
-      />
+      <SearchInputWithIcon value={searchValue} onChange={handleSearchChange} />
       <MenuList>
-        <MenuItem><LuBarChart2 />Home</MenuItem>
-        <MenuItem><GoDotFill /><HiOutlineChartSquareBar />Dashboard</MenuItem>
-        <MenuItem><LuLayers />Projects</MenuItem>
-        <MenuItem>
-          <RiCheckboxMultipleLine />Tasks<CounterBadge>10</CounterBadge>
-        </MenuItem>
-        <MenuItem><BiPieChartAlt2 />Reporting</MenuItem>
-        <MenuItem><FiUsers />Users</MenuItem>
+        {menuItems.slice(0, 6).map(({ name, icon, badge }) => (
+          <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
+            {selectedMenuItem === name && <SelectedDot />}
+            {icon}
+            {name}
+            {badge && <CounterBadge>{badge}</CounterBadge>}
+          </MenuItem>
+        ))}
       </MenuList>
       <MenuList>
-        <MenuItem><HiOutlineSupport />Support</MenuItem>
-        <MenuItem><BsGear />Settings</MenuItem>
+        {menuItems.slice(6).map(({ name, icon }) => (
+          <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
+            {selectedMenuItem === name && <SelectedDot />}
+            {icon}
+            {name}
+          </MenuItem>
+        ))}
       </MenuList>
-      <SpaceUsage />
+      <SpaceUsage usage={usage} />
       <User />
     </SideNav>
   );
