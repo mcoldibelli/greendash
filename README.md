@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dashboard - Greendash
 
-## Getting Started
+## Description
 
-First, run the development server:
+Greendash is a web app designed to present a variety of fictional data in an intuitive and interactive format.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Initially focused on front-end development, this project aims to replicate a compelling dashboard design based on an inspirational picture found online (see it below).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img src="./public/dashboard_idea.jpg" title="design" alt="">
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech stack
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Further Improvements](#improvement)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
 
-## Learn More
+## Installation
+Follow these steps to set up the Greendash project on your local machine.
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
+Before you begin, ensure you have the following installed:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v14.x or higher)
+- npm (v6.x or higher)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation Steps
+1. Clone the repository
 
-## Deploy on Vercel
+    Clone the repository to your local machine using Git.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    `git clone https://github.com/mcoldibelli/greendash.git`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Navigate to the Project directory
+
+    `cd greendash`
+
+3. Install dependecies
+
+    Install the required npm packages.
+
+    `npm install`
+
+4. Run the development Server
+
+    Start the development server to view the project locally.
+
+    `npm run dev`
+
+    The application should now be running at http://localhost:3000.
+
+
+## Usage
+🚧 Under development 🚧
+
+## Features
+- Side Menu
+- Dinamic charts
+- Filters
+- Sale history
+
+## Improvement
+Future iterations will integrate backend functionalities, enabling dynamic data handling and enhanced interactivity.
+
+## Contact
+Reach me on [marcelo.coldibelli@gmail.com](marcelo.coldibelli@gmail.com)
+
+## Acknowledgments
+- Design Image: Credits all for it's creator.
