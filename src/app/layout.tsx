@@ -10,7 +10,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: "This dashboard provides an overview of the sales performance across different regions and product categories. It is designed for sales managers and executives to track progress against targets, identify trends, and make informed decisions.",
+  description: "This dashboard is designed for sales managers and executives to track progress against targets, identify trends, and make informed decisions.",
 };
 
 export default function RootLayout({

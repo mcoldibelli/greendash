@@ -1,7 +1,7 @@
+import { use, useEffect, useState } from "react";
 import styled from "styled-components";
 import { VictoryPie } from 'victory';
 
-// Styled Components
 const SpaceUsageContainer = styled.div`
   background-color: var(--sidebar-bg-search);
   color: var(--text-primary);
@@ -61,26 +61,37 @@ const CentralLabel = styled.div`
 `;
 
 export function SpaceUsage({ usage }: { usage: number }) {
+  const [showUsage, setShowUsage] = useState(false);
+
+  useEffect(() => {
+    if (usage >= 50) {
+      setShowUsage(true);
+    }
+  }, [usage]);
+
   return (
-    <SpaceUsageContainer>
-      <p>Your team has used {usage}% of your available space. Need more?</p>
-      <ChartContainer>
-        <VictoryPie
-          data={[
-            { x: "", y: usage },
-            { x: "", y: 100 - usage },
-          ]}
-          colorScale={["#e6e6e6", "#000000"]}
-          innerRadius={80}
-          height={200}
-          standalone={true}
-        />
-        <CentralLabel>{`${usage}%`}</CentralLabel>
-      </ChartContainer>
-      <ButtonContainer>
-        <StyledButton>Dismiss</StyledButton>
-        <StyledButton>Upgrade plan</StyledButton>
-      </ButtonContainer>
-    </SpaceUsageContainer>
+    showUsage ?
+      <SpaceUsageContainer>
+        <p> Your team has used {usage}% of your available space.Need more ?</p>
+        <ChartContainer>
+          <VictoryPie
+            data={[
+              { x: "", y: usage },
+              { x: "", y: 100 - usage },
+            ]}
+            colorScale={["#e6e6e6", "#000000"]}
+            innerRadius={80}
+            height={200}
+            standalone={true}
+          />
+          <CentralLabel>{`${usage}%`}</CentralLabel>
+        </ChartContainer>
+        <ButtonContainer>
+          <StyledButton
+            onClick={() => setShowUsage(false)}
+          >Dismiss</StyledButton>
+          <StyledButton>Upgrade plan</StyledButton>
+        </ButtonContainer>
+      </SpaceUsageContainer> : null
   );
 }

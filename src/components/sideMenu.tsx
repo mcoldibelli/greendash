@@ -16,6 +16,9 @@ import { GoDotFill } from "react-icons/go";
 
 const SideNav = styled.nav`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--sidebar-bg);
   color: var(--text-primary);
   width: 280px;
@@ -34,17 +37,6 @@ const LogoContainer = styled.div`
   }
 `;
 
-const MenuList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 1em  0;
-
-  span {
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
 const CounterBadge = styled.span`
   background-color: var(--sidebar-bg-search);
   padding: 0.2em 0.4em;
@@ -57,6 +49,17 @@ const CounterBadge = styled.span`
 const SelectedDot = styled(GoDotFill)`
   margin-right: 0.5em;
   color: var(--logo-color);
+`;
+
+const MenuList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1em  0;
+
+  span {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const MenuItem = styled.li<{ isSelected: boolean }>`
@@ -84,11 +87,19 @@ const MenuItem = styled.li<{ isSelected: boolean }>`
   }
 `;
 
+const MainMenu = styled.div`
+  flex: 1;
+`;
+
+const BottomMenu = styled.div`
+  margin-bottom: 1em;
+`;
+
 export function SideMenu() {
   const [searchValue, setSearchValue] = useState("");
   const [selectedMenuItem, setSelectedMenuItem] = useState("Home");
   const tasksCounter = 10;
-  const [usage, setUsage] = useState(40);
+  const [usage, setUsage] = useState(60);
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
@@ -116,25 +127,30 @@ export function SideMenu() {
         <h1>Greendash</h1>
       </LogoContainer>
       <SearchInputWithIcon value={searchValue} onChange={handleSearchChange} />
-      <MenuList>
-        {menuItems.slice(0, 6).map(({ name, icon, badge }) => (
-          <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
-            {selectedMenuItem === name && <SelectedDot />}
-            {icon}
-            {name}
-            {badge && <CounterBadge>{badge}</CounterBadge>}
-          </MenuItem>
-        ))}
-      </MenuList>
-      <MenuList>
-        {menuItems.slice(6).map(({ name, icon }) => (
-          <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
-            {selectedMenuItem === name && <SelectedDot />}
-            {icon}
-            {name}
-          </MenuItem>
-        ))}
-      </MenuList>
+      <MainMenu>
+        <MenuList>
+          {menuItems.slice(0, 6).map(({ name, icon, badge }) => (
+            <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
+              {selectedMenuItem === name && <SelectedDot />}
+              {icon}
+              {name}
+              {badge && <CounterBadge>{badge}</CounterBadge>}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </MainMenu>
+
+      <BottomMenu>
+        <MenuList>
+          {menuItems.slice(6).map(({ name, icon }) => (
+            <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
+              {selectedMenuItem === name && <SelectedDot />}
+              {icon}
+              {name}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </BottomMenu>
       <SpaceUsage usage={usage} />
       <User />
     </SideNav>
