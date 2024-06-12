@@ -97,7 +97,7 @@ const BottomMenu = styled.div`
 
 export function SideMenu() {
   const [searchValue, setSearchValue] = useState("");
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Home");
+  const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
   const tasksCounter = 10;
   const [usage, setUsage] = useState(60);
 
