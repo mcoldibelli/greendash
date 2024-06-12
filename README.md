@@ -69,7 +69,7 @@ Before you begin, ensure you have the following installed:
 Future iterations will integrate backend functionalities, enabling dynamic data handling and enhanced interactivity.
 
 ## Contact
-Reach me on [marcelo.coldibelli@gmail.com](marcelo.coldibelli@gmail.com)
+Reach me on marcelo.coldibelli@gmail.com
 
 ## Acknowledgments
 - Design Image: Credits all for it's creator.
