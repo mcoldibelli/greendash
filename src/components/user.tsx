@@ -1,40 +1,15 @@
-import Image from "next/image";
 import { RxExit } from "react-icons/rx";
 import styled from "styled-components";
-
-const UserContainer = styled.div`
-  position: relative;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  font-size: 0.7em;
-  margin: 1.5em 0;
-  border-top: 2px solid var(--text-secondary);
-  width: 100%;
-  padding-top: 1.2em;
-
-  img {
-    border-radius: 50%;
-    margin-right: 1em;
-    margin-bottom: 1em;
-  }
-`;
-
-const UserInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  h3 {
-    font-weight: 400;
-    margin: 0;
-  }
-`;
+import { Card } from "./card";
+import { userMock } from "../utils/mocks";
 
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
-  margin-left: -20px;
-  margin-bottom: 2em;
+  position: fixed;
   font-size: 1.8em;
+  bottom: 1.5em;
+  left: 8em;
+  transition: 0.15s;
 
   &:hover {
     color: var(--logo-color);
@@ -45,29 +20,19 @@ const ExitIcon = styled(RxExit)`
   }
 `;
 
-const ProfileImage = styled(Image)`
-  cursor: pointer;
-
-  &:hover {
-    border: 2px solid var(--logo-color);
-    transition: 0.3s;
-  }
-
-  &:active {
-    transform: scale(0.9);
-    transition: 0.3s;
-  }
-`;
 
 export function User() {
   return (
-    <UserContainer>
-      <ProfileImage src="/mc.jpg" alt="User profile picture" width={50} height={50} />
-      <UserInfo>
-        <h3>Marcelo</h3>
-        <h3>marcelo.coldibelli@gmail.com</h3>
-      </UserInfo>
-      <ExitIcon />
-    </UserContainer>
+    <>
+      <Card
+        id={userMock.id}
+        title={userMock.title}
+        image={userMock.image}
+        data={userMock.data}
+        highlighted={userMock.highlighted}
+      >
+      </Card >
+      < ExitIcon />
+    </>
   );
 }
