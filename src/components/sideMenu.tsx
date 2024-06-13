@@ -46,7 +46,7 @@ const CounterBadge = styled.span`
   margin-left: auto;
 `;
 
-const SelectedDot = styled(GoDotFill)`
+export const SelectedDot = styled(GoDotFill)`
   margin-right: 0.5em;
   color: var(--logo-color);
 `;

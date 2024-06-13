@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { VictoryPie } from 'victory';
 
@@ -72,7 +72,7 @@ export function SpaceUsage({ usage }: { usage: number }) {
   return (
     showUsage ?
       <SpaceUsageContainer>
-        <p> Your team has used {usage}% of your available space.Need more ?</p>
+        <p>Your team has used {usage}% of your available space. Need more?</p>
         <ChartContainer>
           <VictoryPie
             data={[
@@ -82,7 +82,7 @@ export function SpaceUsage({ usage }: { usage: number }) {
             colorScale={["#e6e6e6", "#000000"]}
             innerRadius={80}
             height={200}
-            standalone={true}
+            labels={() => null}
           />
           <CentralLabel>{`${usage}%`}</CentralLabel>
         </ChartContainer>
