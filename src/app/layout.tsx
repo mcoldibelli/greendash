@@ -1,18 +1,24 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { SideMenu } from "../components/sideMenu";
 import { Header } from "../components/header";
+import styled from "styled-components";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ["latin"]
 });
 
-export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "This dashboard is designed for sales managers and executives to track progress against targets, identify trends, and make informed decisions.",
-};
+const LayoutContainer = styled.div`
+  display: flex;
+  background-color: rgb(20,20,20);
+`;
+
+const ContentContainer = styled.div`
+  
+`;
 
 export default function RootLayout({
   children,
@@ -22,9 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        <SideMenu />
-        {children}
+        <LayoutContainer>
+          <SideMenu />
+          <div>
+            <Header />
+            <ContentContainer>{children}</ContentContainer>
+          </div>
+        </LayoutContainer>
       </body>
     </html>
   );

@@ -53,7 +53,6 @@ export const SelectedDot = styled(GoDotFill)`
 
 const MenuList = styled.ul`
   list-style: none;
-  padding: 0;
   margin: 1em  0;
 
   span {
@@ -65,7 +64,8 @@ const MenuList = styled.ul`
 const MenuItem = styled.li<{ isSelected: boolean }>`
   display: flex;
   align-items: center;
-  padding: 0.5em;
+  margin: 0.5em 0;
+  padding: 0.4em;
   cursor: pointer;
   border-radius: var(--border-radius);
   background-color: ${({ isSelected }) => (isSelected ? "var(--text-secondary)" : "transparent")};
@@ -92,7 +92,7 @@ const MainMenu = styled.div`
 `;
 
 const BottomMenu = styled.div`
-  margin-bottom: 1em;
+  margin-bottom: 0;
 `;
 
 export function SideMenu() {

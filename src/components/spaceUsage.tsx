@@ -6,8 +6,8 @@ const SpaceUsageContainer = styled.div`
   background-color: var(--sidebar-bg-search);
   color: var(--text-primary);
   position: relative;
-  height: 14em;
-  padding: 1em;
+  height: 12em;
+  padding: 1em 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,8 +49,8 @@ const ChartContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
 `;
 
 const CentralLabel = styled.div`

@@ -17,7 +17,7 @@ const StyledInput = styled.input`
   color: var(--text-primary);
   background-color: var(--sidebar-bg-search);
   border: none;
-  padding: 0.5em;
+  padding: 0.8em;
   width: 100%;
   border-radius: var(--border-radius);
 
