@@ -48,7 +48,7 @@ const UserInfo = styled.div`
   }
 `;
 
-const HighlightedText = styled.p`
+const HighlightedText = styled.span`
   display: inline;
   color: var(--logo-color);
   font-weight: bold;

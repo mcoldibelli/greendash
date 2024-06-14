@@ -9,7 +9,9 @@ const ActivityContainer = styled.aside`
   top: 180px;
   padding: 1em;
   width: 16em;
+  height: calc(100vh - 180px);
   color: var(--text-primary);
+  overflow-y: hidden;
 `;
 
 const ActivityHeader = styled.span`
