@@ -155,6 +155,10 @@ const CalendarContainer = styled.span`
   background-color: var(--text-secondary);
   padding: 0.5em;
   border-radius: 0.5rem;
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 `;
 
 
