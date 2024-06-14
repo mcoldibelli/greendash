@@ -53,7 +53,7 @@ const OverviewContainer = styled.div`
 `;
 
 const KPI = styled.h2`
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 500;
   color: var(--text-primary);
 `;
@@ -62,7 +62,7 @@ const Benchmark = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5em;
-  font-size: 0.75em;
+  font-size: 0.9em;
   color: var(--logo-color);
   margin-top: 0.5em;
 
