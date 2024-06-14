@@ -1,5 +1,8 @@
+"use client";
+
 import styled from "styled-components";
 import { Overview } from "./overview";
+import { summaryCards } from '../utils/mocks';
 
 const SummaryContainer = styled.div`
   display: flex;
@@ -16,18 +19,18 @@ const SummaryContainer = styled.div`
   overflow-y: auto;
   scrollbar-color: black var(--text-secondary);
   scrollbar-width: thin;
-  
 `;
 
-export function Summary(cards: any) {
+
+export function Summary() {
   return (
     <SummaryContainer>
-      {cards.cards.map((card: any) => (
-        <Overview
+      {summaryCards.map((card: any) => (
+        < Overview
           key={card.id}
           title={card.title}
-          value={card.data}
-          benchmark={card.highlighted}
+          value={card.value}
+          benchmark={card.benchmark}
         />
       ))}
     </SummaryContainer>

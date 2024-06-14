@@ -12,6 +12,10 @@ interface OverviewProps {
 
 const OverviewContainer = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   background-color: var(--sidebar-bg);
   color: var(--text-primary);
   width: 17.3em;
@@ -27,30 +31,66 @@ const OverviewContainer = styled.div`
   }
 
   button {
+    font-size: 1.25em;
     color: var(--text-primary);
     background-color: transparent;
     border: none;
     cursor: pointer;
   }
 
+  button:hover {
+    color: var(--logo-color);
+  }
+
+  button:active {
+    transform: scale(0.9);
+  }
+
   h1 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 400;
   }
 `;
 
-export function Overview(props: OverviewProps) {
+const KPI = styled.h2`
+  font-size: 2.5em;
+  font-weight: 500;
+  color: var(--text-primary);
+`;
+
+const Benchmark = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.75em;
+  color: var(--logo-color);
+  margin-top: 0.5em;
+
+  p {
+    color: var(--text-secondary);
+  }
+
+  .arrow {
+    color: red;
+  }
+`;
+
+export function Overview(data: OverviewProps) {
+  const isPositive = data.value > 0;
+  const performance = (data.value / data.benchmark) * 100;
+
   return (
     <OverviewContainer>
       <span>
-        <h1>{props.title}</h1>
+        <h1>{data.title}</h1>
         <button><BsThreeDotsVertical /></button>
       </span>
-      <span>{props.value}</span>
-      <span>
-        {props.benchmark > 0 ? <FaArrowUp /> : <FaArrowDown />}
-        <span>{props.benchmark}%</span>
-      </span>
+      <KPI>$ {data.value.toFixed(0)}</KPI>
+      <Benchmark>
+        {isPositive ? <FaArrowUp /> : <FaArrowDown className="arrow" />}
+        <span>{performance.toFixed(0)}%</span>
+        <p>vs last month</p>
+      </Benchmark>
     </OverviewContainer>
-  )
-};
+  );
+}

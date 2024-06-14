@@ -80,12 +80,12 @@ export const userMocksGroup = [
 ];
 
 export const summaryCards = [
-  { title: "Today's revenue", value: 1280, benchmark: 1000 },
-  { title: "Totay's orders", value: 25, benchmark: 18 },
+  { title: "Today's revenue", value: 1800, benchmark: 1240 },
+  { title: "Today's orders", value: 11, benchmark: 18 },
+  { title: "Avg. order value", value: 23, benchmark: 78 },
   { title: "Avg. order value", value: 90, benchmark: 78 },
   { title: "Avg. order value", value: 90, benchmark: 78 },
-  { title: "Avg. order value", value: 90, benchmark: 78 },
-  { title: "Totay's orders", value: 25, benchmark: 18 },
+  { title: "Today's orders", value: 25, benchmark: 18 },
   { title: "Avg. order value", value: 90, benchmark: 78 },
   { title: "Avg. order value", value: 90, benchmark: 78 },
   { title: "Avg. order value", value: 90, benchmark: 78 },

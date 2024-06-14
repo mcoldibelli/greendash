@@ -7,7 +7,6 @@ import { Header } from "../components/header";
 import styled from "styled-components";
 import { Activity } from "../components/activity";
 import { Summary } from "../components/summary";
-import { summaryCards } from "../utils/mocks";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -35,7 +34,7 @@ export default function RootLayout({
           <SideMenu />
           <div>
             <Header />
-            <Summary cards={summaryCards} />
+            <Summary />
             <ContentContainer>{children}</ContentContainer>
           </div>
           <Activity />
