@@ -161,6 +161,9 @@ const CalendarContainer = styled.span`
   }
 `;
 
+const IconContainer = styled.span`
+  margin-right: 0.5rem;
+`;
 
 export function Header(props: HeaderProps) {
   const [selectedMenuItem, setSelectedMenuItem] = useState("Default");
@@ -177,7 +180,7 @@ export function Header(props: HeaderProps) {
   };
 
   const handleAddViewClick = () => {
-    if (menuItems.length >= 6) return alert("You can only have up to  views");
+    if (menuItems.length >= 6) return alert("You can only have up to 6 views");
     const newMenuItemName = `View ${menuItems.length + 1}`;
     setMenuItems([...menuItems, { name: newMenuItemName }]);
     setSelectedMenuItem(newMenuItemName);
@@ -200,8 +203,8 @@ export function Header(props: HeaderProps) {
       </ViewContainer>
       <RightContainer>
         <IOContainer>
-          <button><IoCloudDownloadOutline />Export report</button>
-          <button><FaPlus />Invite</button>
+          <button><IconContainer><IoCloudDownloadOutline /></IconContainer>Export report</button>
+          <button><IconContainer><FaPlus /></IconContainer>Invite</button>
         </IOContainer>
 
         <FilterContainer>
@@ -209,7 +212,7 @@ export function Header(props: HeaderProps) {
             <LuCalendar />
             <input type="date" name="" id="" />
           </CalendarContainer>
-          <button><IoFilter />Filters</button>
+          <button><IconContainer><IoFilter /></IconContainer>Filters</button>
         </FilterContainer>
       </RightContainer>
     </TagHeader >
