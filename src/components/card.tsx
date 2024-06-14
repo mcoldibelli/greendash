@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { CardProps } from "../utils/types";
 
 const IMAGE_SIZE = 50;
-const MARGIN_SIZE = 1.5;
-const PADDING_TOP_SIZE = 1.2;
+const MARGIN_SIZE = 0.5;
+const PADDING_TOP_SIZE = 1.1;
 const FONT_SIZE = 0.7;
 const TRANSITION_DURATION = 0.15;
 
@@ -15,7 +15,6 @@ const CardContainer = styled.div`
   align-items: center;
   font-size: ${FONT_SIZE}em;
   margin: ${MARGIN_SIZE}em 0;
-  border-top: 2px solid var(--text-secondary);
   width: 100%;
   padding-top: ${PADDING_TOP_SIZE}em;
 `;

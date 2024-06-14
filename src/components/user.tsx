@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { userMock } from "../utils/mocks";
 import Card from "./card";
 
+const ProfileContainer = styled.div`
+  margin-top: 2em;
+  border-top: 2px solid var(--text-secondary);
+`;
+
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
   position: absolute;
@@ -23,7 +28,7 @@ const ExitIcon = styled(RxExit)`
 
 export function User() {
   return (
-    <>
+    <ProfileContainer>
       <Card
         id={userMock.id}
         title={userMock.title}
@@ -33,6 +38,6 @@ export function User() {
       >
       </Card >
       < ExitIcon />
-    </>
+    </ProfileContainer>
   );
 }
