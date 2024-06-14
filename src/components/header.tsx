@@ -76,7 +76,8 @@ const ViewContainer = styled.div`
 const FilterContainer = styled.span`
   display: flex;
   align-items: center;
-
+  margin-left: 2rem;
+  
   button {
     display: flex;
     align-items: center;
@@ -144,6 +145,7 @@ const IOContainer = styled.div`
 const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2.5em;
   margin-right: 2rem;
   color: var(--sidebar-text);  
@@ -153,7 +155,7 @@ const CalendarContainer = styled.span`
   display: flex;
   align-items: center;
   background-color: var(--text-secondary);
-  padding: 0.5em;
+  padding: 0.3em 0 0.3em 1em;
   border-radius: 0.5rem;
 
   input[type="date"]::-webkit-calendar-picker-indicator {
@@ -162,6 +164,7 @@ const CalendarContainer = styled.span`
 `;
 
 const IconContainer = styled.span`
+  display: flex;
   margin-right: 0.5rem;
 `;
 
