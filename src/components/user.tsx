@@ -5,9 +5,9 @@ import Card from "./card";
 
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   font-size: 1.8em;
-  bottom: 1.5em;
+  bottom: 2.2em;
   left: 8em;
   transition: 0.15s;
 
