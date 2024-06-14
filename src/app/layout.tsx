@@ -5,6 +5,7 @@ import "./globals.css";
 import { SideMenu } from "../components/sideMenu";
 import { Header } from "../components/header";
 import styled from "styled-components";
+import { Activity } from "../components/activity";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -34,8 +35,9 @@ export default function RootLayout({
             <Header />
             <ContentContainer>{children}</ContentContainer>
           </div>
+          <Activity />
         </LayoutContainer>
       </body>
-    </html>
+    </html >
   );
 }

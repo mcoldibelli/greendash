@@ -1,7 +1,7 @@
 import { RxExit } from "react-icons/rx";
 import styled from "styled-components";
-import { Card } from "./card";
 import { userMock } from "../utils/mocks";
+import Card from "./card";
 
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
