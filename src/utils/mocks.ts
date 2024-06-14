@@ -78,3 +78,16 @@ export const userMocksGroup = [
     highlighted: "Nintendo Switch",
   },
 ];
+
+export const summaryCards = [
+  { title: "Today's revenue", value: 1280, benchmark: 1000 },
+  { title: "Totay's orders", value: 25, benchmark: 18 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Totay's orders", value: 25, benchmark: 18 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+  { title: "Avg. order value", value: 90, benchmark: 78 },
+];

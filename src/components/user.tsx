@@ -10,10 +10,10 @@ const ProfileContainer = styled.div`
 
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
-  position: absolute;
+  position: relative;
   font-size: 1.8em;
-  bottom: 2.2em;
-  left: 8em;
+  bottom: 2.5em;
+  left: 7em;
   transition: 0.15s;
 
   &:hover {

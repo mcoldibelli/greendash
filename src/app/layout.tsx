@@ -6,6 +6,8 @@ import { SideMenu } from "../components/sideMenu";
 import { Header } from "../components/header";
 import styled from "styled-components";
 import { Activity } from "../components/activity";
+import { Summary } from "../components/summary";
+import { summaryCards } from "../utils/mocks";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -14,7 +16,7 @@ const roboto = Roboto({
 
 const LayoutContainer = styled.div`
   display: flex;
-  background-color: rgb(20,20,20);
+  background-color: rgb(12,12,12);
 `;
 
 const ContentContainer = styled.div`
@@ -33,6 +35,7 @@ export default function RootLayout({
           <SideMenu />
           <div>
             <Header />
+            <Summary cards={summaryCards} />
             <ContentContainer>{children}</ContentContainer>
           </div>
           <Activity />

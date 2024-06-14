@@ -24,9 +24,10 @@ const TagHeader = styled.header`
 const MenuList = styled.ul`
   display: flex;
   align-items: center;
-  background-color: var(--text-secondary);
-  padding: 0.5rem;
+  background-color: var(--sidebar-bg);
+  padding: 0.62rem;
   border-radius: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 `;
 
 const MenuItem = styled.li<{ isSelected: boolean }>`
@@ -34,11 +35,13 @@ const MenuItem = styled.li<{ isSelected: boolean }>`
   align-items: center;
   margin: 0 1rem;
   cursor: pointer;
-  color: ${(props) => (props.isSelected ? "var(--bar-color)" : "var(--sidebar-text)")};
+  
+  color: ${(props) => (props.isSelected ? "var(--logo-color)" : "var(--sidebar-text)")};
   
   &:hover {
     color: var(--logo-color);
-  }
+    box-shadow: 0 0 0 .1rem 0.1rem rgba(255,255,255,0.1);
+}
 `;
 
 const AddView = styled.li`
@@ -76,19 +79,20 @@ const ViewContainer = styled.div`
 const FilterContainer = styled.span`
   display: flex;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 3rem;
   
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--text-secondary);
+    background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem;
     border-radius: 0.5rem;
     cursor: pointer;
     margin-left: 1rem;
     border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
   input:hover, button:hover {
@@ -101,7 +105,7 @@ const FilterContainer = styled.span`
   }
 
   input {
-    padding: 0.2em;
+    padding: 0.4em;
     border-radius: 0.5rem;
     border: none;
     margin-left: 1rem;
@@ -123,13 +127,14 @@ const IOContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--text-secondary);
+    background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
     margin-left: 1rem;
     border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 
   button:hover {
@@ -154,9 +159,18 @@ const RightContainer = styled.div`
 const CalendarContainer = styled.span`
   display: flex;
   align-items: center;
-  background-color: var(--text-secondary);
-  padding: 0.3em 0 0.3em 1em;
+  background-color: var(--sidebar-bg);
+  padding: 0.52rem;
   border-radius: 0.5rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+  input[type="date"] {
+    padding: 0.1em;
+    border-radius: 0.3rem;
+    margin-left: 1.3em;
+    background-color: transparent;
+  }
+
 
   input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;

@@ -24,6 +24,8 @@ const SideNav = styled.nav`
   width: 280px;
   height: 100vh;
   padding: 1em;
+  border-right: 3px solid rgba(100, 100, 100, 0.1);
+
 `;
 
 const LogoContainer = styled.div`

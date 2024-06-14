@@ -6,8 +6,8 @@ const SpaceUsageContainer = styled.div`
   background-color: var(--sidebar-bg-search);
   color: var(--text-primary);
   position: relative;
-  height: 12em;
-  padding: 1em 0.5em;
+  height: 11em;
+  padding: 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

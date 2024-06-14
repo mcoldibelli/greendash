@@ -8,16 +8,20 @@ const ActivityContainer = styled.aside`
   right: 0;
   top: 180px;
   padding: 1em;
-  width: 16em;
-  height: calc(100vh - 180px);
+  width: 18em;
+  height: calc(100vh - 11.3em);
   color: var(--text-primary);
-  overflow-y: hidden;
+  overflow-y: auto;
+  
+  &::-webkit-scrollbar {
+    width: .5em;
+  }
 `;
 
 const ActivityHeader = styled.span`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1em;
+  color: var(--text-primary);
 
   h1 {
     font-size: 1.5em;
@@ -34,6 +38,7 @@ const ActivityHeader = styled.span`
 
     &:hover {
       background-color: var(--logo-color);
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
 
     &:active {
@@ -50,15 +55,18 @@ export function Activity() {
         <h1>Activity</h1>
         <button>View all</button>
       </ActivityHeader>
-      {logs.map((item: CardProps) => (
-        <Card
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          image={item.image}
-          data={item.data}
-          highlighted={item.highlighted}
-        />))}
+      <span>
+
+        {logs.map((item: CardProps) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            image={item.image}
+            data={item.data}
+            highlighted={item.highlighted}
+          />))}
+      </span>
     </ActivityContainer>
   )
 }
