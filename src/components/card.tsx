@@ -2,33 +2,26 @@ import Image from "next/image";
 import styled from "styled-components";
 import { CardProps } from "../utils/types";
 
-const IMAGE_SIZE = 50;
-const MARGIN_SIZE = 0.5;
-const PADDING_TOP_SIZE = 1.1;
-const FONT_SIZE = 0.7;
-const TRANSITION_DURATION = 0.15;
-
 const CardContainer = styled.div`
   position: relative;
   bottom: 0;
+  width: 100%;
+
   display: flex;
   align-items: center;
-  font-size: ${FONT_SIZE}em;
-  margin: ${MARGIN_SIZE}em 0;
-  width: 100%;
-  padding-top: ${PADDING_TOP_SIZE}em;
+  margin: 0.5em 0; 
+  font-size: 0.7em;
 `;
 
 const ProfileImage = styled(Image)`
   border-radius: 50%;
-  margin-right: 1em;
-  margin-bottom: 1em;
+  margin: 1em;
   object-fit: cover;
 
   &:hover {
     cursor: pointer;
     border: 2px solid var(--logo-color);
-    transition: ${TRANSITION_DURATION}s;
+    transition: 0.15s;
   }
 `;
 
@@ -49,7 +42,7 @@ const UserInfo = styled.div`
 
 const HighlightedText = styled.span`
   display: inline;
-  color: var(--logo-color);
+  color: var(--highlight-color);
   font-weight: bold;
 `;
 
@@ -59,8 +52,8 @@ const Card = ({ image, title, data, highlighted }: CardProps) => {
       <ProfileImage
         src={image}
         alt="Profile image"
-        width={IMAGE_SIZE}
-        height={IMAGE_SIZE}
+        width={50}
+        height={50}
       />
       <UserInfo>
         <h1>{title}</h1>

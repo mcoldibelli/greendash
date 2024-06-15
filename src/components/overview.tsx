@@ -16,15 +16,14 @@ const OverviewContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   
-  background-color: var(--sidebar-bg);
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   width: 17.3em;
   flex-grow: 1;
   height: 9.3em;
   padding: 1.25em;
   border-radius: 0.625em;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
+  box-shadow: var(--box-shadow);
+  
   span {
     display: flex;
     justify-content: space-between;
@@ -55,7 +54,7 @@ const OverviewContainer = styled.div`
 const KPI = styled.h2`
   font-size: 2em;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 `;
 
 const Benchmark = styled.div`
@@ -63,21 +62,24 @@ const Benchmark = styled.div`
   align-items: center;
   gap: 0.5em;
   font-size: 0.9em;
-  color: var(--logo-color);
   margin-top: 0.5em;
 
   p {
-    color: var(--text-secondary);
+    color: var(--theme-text-secondary);
   }
 
-  .arrow {
+  .positive {
+    color: green;
+  }
+
+  .negative {
     color: red;
   }
 `;
 
 export function Overview(data: OverviewProps) {
-  const isPositive = data.value > 0;
-  const performance = (data.value / data.benchmark) * 100;
+  const performance = ((data.value / data.benchmark) - 1) * 100;
+  const isPositive = performance > 0;
 
   return (
     <OverviewContainer>
@@ -87,8 +89,8 @@ export function Overview(data: OverviewProps) {
       </span>
       <KPI>$ {data.value.toFixed(0)}</KPI>
       <Benchmark>
-        {isPositive ? <FaArrowUp /> : <FaArrowDown className="arrow" />}
-        <span>{performance.toFixed(0)}%</span>
+        {isPositive ? <FaArrowUp className="positive" /> : <FaArrowDown className="negative" />}
+        <span className={isPositive ? 'positive' : 'negative'}>{performance.toFixed(0)}%</span>
         <p>vs last month</p>
       </Benchmark>
     </OverviewContainer>

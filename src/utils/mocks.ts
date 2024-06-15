@@ -51,7 +51,7 @@ export const userMocksGroup = [
   },
   {
     id: 6,
-    title: "RON",
+    title: "Ron",
     image: "/profile pictureS/ron.jpg",
     data: "Purchased",
     highlighted: "Surface Pro 7",
@@ -80,7 +80,7 @@ export const userMocksGroup = [
 ];
 
 export const summaryCards = [
-  { title: "Today's revenue", value: 1800, benchmark: 1240 },
+  { title: "Today's revenue", value: 500, benchmark: 240 },
   { title: "Today's orders", value: 11, benchmark: 18 },
   { title: "Avg. order value", value: 23, benchmark: 78 },
   { title: "Avg. order value", value: 90, benchmark: 78 },

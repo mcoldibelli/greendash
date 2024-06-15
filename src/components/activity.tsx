@@ -6,12 +6,13 @@ import { CardProps } from "../utils/types";
 const ActivityContainer = styled.aside`
   position: absolute;
   right: 0;
-  top: 180px;
-  padding: 1em;
+  top: 10.5em;
   width: 18em;
-  height: calc(100vh - 11.3em);
-  color: var(--text-primary);
+  height: calc(100vh - 10em);
+  
   overflow-y: auto;
+  border-radius: 0.5em 0 0 0;
+  box-shadow: var(--box-shadow);
   
   &::-webkit-scrollbar {
     width: .5em;
@@ -19,26 +20,34 @@ const ActivityContainer = styled.aside`
 `;
 
 const ActivityHeader = styled.span`
+  position: sticky;
+  top: 0;
+  height: 3em;
+
   display: flex;
   justify-content: space-between;
-  color: var(--text-primary);
-
+  align-items: center;
+  
+  padding: 1em;
+  background-color: var(--theme-color-bg);
+  z-index: 1;
+  box-shadow: 0 0.1em 1em rgba(0, 0, 0, 0.1);
+  
   h1 {
     font-size: 1.5em;
   }
-
+  
   button {
-    background-color: var(--menu-color);
-    color: var(--text-secondary);
-    border: 0;
+    color: var(--theme-text-secondary);
+    border: none;
     padding: 0.5em;
-    border-radius: 0.5em;
-    cursor: pointer;
+    border-radius: var(--border-radius);
     transition: 0.15s;
+    cursor: pointer;
 
     &:hover {
-      background-color: var(--logo-color);
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      box-shadow: var(--box-shadow);
+      color: var(--highlight-color);
     }
 
     &:active {

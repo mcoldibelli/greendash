@@ -5,19 +5,19 @@ import { Overview } from "./overview";
 import { summaryCards } from '../utils/mocks';
 
 const SummaryContainer = styled.div`
+  position: absolute;
+  height: 10rem;
+  
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
   width: calc(100% - 38em);
-  height: 10rem;
-  border-radius: 0.625em;
-  
+  border-radius: var(--border-radius);
   padding: 0.5em;
   gap: 1em;
   top: 10em;
   left: 19rem;
   overflow-y: auto;
-  scrollbar-color: black var(--text-secondary);
+  scrollbar-color: black var(--theme-text-secondary);
   scrollbar-width: thin;
 `;
 

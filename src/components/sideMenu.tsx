@@ -16,16 +16,17 @@ import { GoDotFill } from "react-icons/go";
 
 const SideNav = styled.nav`
   position: fixed;
+  width: 17.5em;
+  height: 100vh;
+  padding: 1em;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--sidebar-bg);
-  color: var(--text-primary);
-  width: 280px;
-  height: 100vh;
-  padding: 1em;
-  border-right: 3px solid rgba(100, 100, 100, 0.1);
 
+  background-color: var(--sidebar-bg);
+  color: var(--theme-text-primary);
+  box-shadow: var(--box-shadow);
 `;
 
 const LogoContainer = styled.div`
@@ -34,8 +35,9 @@ const LogoContainer = styled.div`
   cursor: pointer;
 
   h1 {
-    font-size: 1.4em;
+    font-size: 2.1em;
     margin-left: 0.5em;
+    color: var(--highlight-color);
   }
 `;
 
@@ -50,7 +52,6 @@ const CounterBadge = styled.span`
 
 export const SelectedDot = styled(GoDotFill)`
   margin-right: 0.5em;
-  color: var(--logo-color);
 `;
 
 const MenuList = styled.ul`
@@ -66,16 +67,19 @@ const MenuList = styled.ul`
 const MenuItem = styled.li<{ isSelected: boolean }>`
   display: flex;
   align-items: center;
+  
   margin: 0.5em 0;
   padding: 0.4em;
-  cursor: pointer;
   border-radius: var(--border-radius);
-  background-color: ${({ isSelected }) => (isSelected ? "var(--text-secondary)" : "transparent")};
-  color: ${({ isSelected }) => (isSelected ? "var(--logo-color)" : "inherit")};
+  
+  cursor: pointer;
+  box-shadow: ${({ isSelected }) => (isSelected ? "var(--box-shadow)" : "none")};
+  
+  color: ${({ isSelected }) => (isSelected ? "var(--highlight-color)" : "inherit")};
 
   &:hover {
     background-color: var(--text-secondary);
-    color: var(--logo-color);
+    color: var(--highlight-color);
   }
 
   &:active {

@@ -14,9 +14,10 @@ const SearchContainer = styled.div`
 `;
 
 const StyledInput = styled.input`
-  color: var(--text-primary);
+  color: var(--theme-color-dark);
   background-color: var(--sidebar-bg-search);
   border: none;
+  box-shadow: var(--box-shadow);
   padding: 0.8em;
   width: 100%;
   border-radius: var(--border-radius);

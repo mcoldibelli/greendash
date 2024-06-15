@@ -11,23 +11,20 @@ interface HeaderProps { }
 const TagHeader = styled.header`
   position: fixed;
   top: 0;
-  padding: 2rem;
   width: 100%;
   height: 130px;
+  padding: 2em 1em;
   
   display: flex;
   justify-content: space-between;
-  color: white;
   font-size: 0.9em;
 `;
 
 const MenuList = styled.ul`
   display: flex;
-  align-items: center;
-  background-color: var(--sidebar-bg);
-  padding: 0.62rem;
-  border-radius: 0.5rem;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 0.37em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
 `;
 
 const MenuItem = styled.li<{ isSelected: boolean }>`
@@ -36,39 +33,47 @@ const MenuItem = styled.li<{ isSelected: boolean }>`
   margin: 0 1rem;
   cursor: pointer;
   
-  color: ${(props) => (props.isSelected ? "var(--logo-color)" : "var(--sidebar-text)")};
+  color: ${(props) => (props.isSelected ? "var(--highlight-color)" : "var(--theme-color-primary)")};
   
   &:hover {
-    color: var(--logo-color);
-    box-shadow: 0 0 0 .1rem 0.1rem rgba(255,255,255,0.1);
-}
+    color: var(--highlight-color);
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
 `;
 
 const AddView = styled.li`
   display: inline-block;
   margin: 0 1rem;
-  color: var(--sidebar-text);
+  color: var(--theme-text-primary);
   cursor: pointer;
+  border: 1px solid var(--theme-color-bg);
+  border-radius: 100%;
+  padding: 0.25em 0.5em;
   
   &:hover {
-    color: var(--logo-color);
-  }
-
-  &:active {
-    transform: scale(1.5);
+    color: var(--highlight-color);
+    border: 1px solid var(--highlight-color);
+    transform: scale(1.1);
+    transition: all 0.2s;
   }
 `;
 
 const ViewContainer = styled.div`
-  margin-left: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 300px;
 
   h1 {
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   p {
-    color: rgb(160,160,160);
+    color: var(--theme-text-secondary);
     font-weight: 300;
     font-size: 1rem;
     padding: 0 0 0.5em;
@@ -85,19 +90,19 @@ const FilterContainer = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
     padding: 0.6rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
     margin-left: 1rem;
+
+    background-color: var(--sidebar-bg);
+    color: var(--theme-text-primary);
+    border-radius: 0.5rem;
     border: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
   }
 
   input:hover, button:hover {
-    color: var(--logo-color);
-
+    color: var(--highlight-color);
   }
 
   button:active {
@@ -110,18 +115,14 @@ const FilterContainer = styled.span`
     border: none;
     margin-left: 1rem;
     background-color: var(--text-secondary);
-    color: white;
-  }
-
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+    color: var(--text-secondary);
   }
 `;
 
 const IOContainer = styled.div`
   display: flex;
   margin-left: 3rem;
-  color: var(--sidebar-text);
+  color: var(--theme-text-primary);
 
   button {
     display: flex;
@@ -134,11 +135,11 @@ const IOContainer = styled.div`
     cursor: pointer;
     margin-left: 1rem;
     border: none;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: var(--box-shadow);
   }
 
   button:hover {
-    color: var(--logo-color);
+    color: var(--highlight-color);
   }
 
   button:active {
@@ -162,15 +163,15 @@ const CalendarContainer = styled.span`
   background-color: var(--sidebar-bg);
   padding: 0.52rem;
   border-radius: 0.5rem;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: var(--box-shadow);
 
   input[type="date"] {
     padding: 0.1em;
     border-radius: 0.3rem;
     margin-left: 1.3em;
     background-color: transparent;
+    cursor: pointer;
   }
-
 
   input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;

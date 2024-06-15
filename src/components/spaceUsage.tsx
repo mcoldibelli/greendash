@@ -3,30 +3,31 @@ import styled from "styled-components";
 import { VictoryPie } from 'victory';
 
 const SpaceUsageContainer = styled.div`
-  background-color: var(--sidebar-bg-search);
-  color: var(--text-primary);
   position: relative;
   height: 11em;
   padding: 0.5em;
+  border-radius: var(--border-radius);
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border-radius: var(--border-radius);
+  
+  background-color: var(--theme-color-bg);
+  color: var(--text-primary);
+  box-shadow: var(--box-shadow);
 
   p {
-    font-size: 1em;
     text-align: center;
   }  
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 0.5em;
+  gap: 1em;
 `;
 
 const StyledButton = styled.button`
-  background-color: var(--logo-sidebar-bg);
   color: var(--text-primary);
   border: none;
   padding: 0.4em 0.8em;
@@ -36,7 +37,8 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: var(--logo-color);
-    color: var(--text-secondary);
+    box-shadow: var(--box-shadow);
+    color: var(--highlight-color);
   }
 
   &:active {
@@ -46,18 +48,19 @@ const StyledButton = styled.button`
 
 const ChartContainer = styled.div`
   position: relative;
+  width: 11.25em;
+  height: 11.25em;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 180px;
-  width: 180px;
 `;
 
 const CentralLabel = styled.div`
   position: absolute;
   text-align: center;
-  font-size: 20px;
-  color: var(--text-primary);
+  font-size: 1.3em;
+  color: var(--theme-text-primary);
 `;
 
 export function SpaceUsage({ usage }: { usage: number }) {

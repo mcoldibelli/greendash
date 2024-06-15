@@ -4,21 +4,36 @@ import { userMock } from "../utils/mocks";
 import Card from "./card";
 
 const ProfileContainer = styled.div`
-  margin-top: 2em;
-  border-top: 2px solid var(--text-secondary);
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: var(--border-radius);
+
+  img:hover {
+    transform: scale(1.1);
+    border: 2px solid var(--highlight-color);
+  }
+
+  img:active {
+    transform: scale(0.9);
+  }
 `;
 
 const ExitIcon = styled(RxExit)`
   cursor: pointer;
-  position: relative;
+  position: absolute;
   font-size: 1.8em;
-  bottom: 2.5em;
+  bottom: 1.5em;
   left: 7em;
   transition: 0.15s;
 
   &:hover {
-    color: var(--logo-color);
+    transform: scale(1.1);
   }
+
 
   &:active {
     transform: scale(0.9);
