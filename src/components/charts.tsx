@@ -16,10 +16,35 @@ const ChartContainer = styled.div`
   background: var(--theme-color-bg);
 `;
 
-const StyledHeading = styled.h1`
+const StyledHeading = styled.span`
+  display: flex;
   text-align: center;
-  color: var(--text-color);
-  font-size: 1.5em;
+  justify-content: space-between;
+
+  
+  h1 {
+    color: var(--text-color);
+    font-size: 1.5em;
+  }
+
+  button {
+    background: var(--theme-color-bg);
+    color: var(--theme-text-primary);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: var(--box-shadow);
+
+    &:hover {
+      color: var(--highlight-color);
+    }
+
+    &:active {
+      scale: 0.9;
+    }
+  }
 `;
 
 export function Charts() {
@@ -30,7 +55,12 @@ export function Charts() {
 
   return (
     <ChartContainer>
-      <StyledHeading>Sales Data for 2023</StyledHeading>
+
+      <StyledHeading>
+        <h1>Sales Data for 2023</h1>
+        <button>View report</button>
+      </StyledHeading>
+
       <VictoryChart
         theme={VictoryTheme.material}
         height={450}
