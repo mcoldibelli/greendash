@@ -33,8 +33,16 @@ const OverviewContainer = styled.div`
     font-size: 1.25em;
     color: var(--text-primary);
     background-color: transparent;
-    border: none;
+    border: 1px solid var(--theme-color-bg);
     cursor: pointer;
+    padding: 0.25em;
+    border-radius: 100%;
+  
+    &:hover {
+      color: var(--highlight-color);
+      border: 1px solid var(--highlight-color);
+      transition: all 0.2s;
+    }
   }
 
   button:hover {
