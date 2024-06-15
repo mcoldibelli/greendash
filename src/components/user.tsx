@@ -32,8 +32,8 @@ const ExitIcon = styled(RxExit)`
 
   &:hover {
     transform: scale(1.1);
+    color: var(--highlight-color);
   }
-
 
   &:active {
     transform: scale(0.9);
