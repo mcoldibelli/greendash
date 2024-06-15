@@ -1,7 +1,7 @@
 "use client";
 
-import styled from "styled-components";
 import { Activity } from "../../components/activity";
+import { Charts } from "../../components/charts";
 import { Header } from "../../components/header";
 import { SideMenu } from "../../components/sideMenu";
 import { Summary } from "../../components/summary";
@@ -15,6 +15,7 @@ export default function Dashboard() {
         <Header />
         <SideMenu />
         <Summary />
+        <Charts />
         <Activity />
       </main>
     </RootLayout>

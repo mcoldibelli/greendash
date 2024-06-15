@@ -1,0 +1,64 @@
+{
+  "sales_report": [
+    {
+      "month": "Jan",
+      "total_sales": 48000.00,
+      "items_sold": 2980
+    },
+    {
+      "month": "Feb",
+      "total_sales": 45000.00,
+      "items_sold": 2800
+    },
+    {
+      "month": "Mar",
+      "total_sales": 47000.00,
+      "items_sold": 2900
+    },
+    {
+      "month": "Apr",
+      "total_sales": 46000.00,
+      "items_sold": 2850
+    },
+    {
+      "month": "May",
+      "total_sales": 49000.00,
+      "items_sold": 3050
+    },
+    {
+      "month": "Jun",
+      "total_sales": 50000.00,
+      "items_sold": 3100
+    },
+    {
+      "month": "Jul",
+      "total_sales": 52000.00,
+      "items_sold": 3250
+    },
+    {
+      "month": "Aug",
+      "total_sales": 53000.00,
+      "items_sold": 3300
+    },
+    {
+      "month": "Sep",
+      "total_sales": 54000.00,
+      "items_sold": 3350
+    },
+    {
+      "month": "Oct",
+      "total_sales": 56000.00,
+      "items_sold": 3450
+    },
+    {
+      "month": "Nov",
+      "total_sales": 57000.00,
+      "items_sold": 3500
+    },
+    {
+      "month": "Dec",
+      "total_sales": 60000.00,
+      "items_sold": 3650
+    }
+  ]
+}
