@@ -11,11 +11,11 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 1em;
+  background-color: var(--theme-color-bg);
 `;
 
 const StyledInput = styled.input`
-  color: var(--theme-color-dark);
-  background-color: var(--sidebar-bg-search);
+  background-color: var(--theme-color-bg);
   border: none;
   box-shadow: var(--box-shadow);
   padding: 0.8em;
@@ -23,7 +23,7 @@ const StyledInput = styled.input`
   border-radius: var(--border-radius);
   
   &:focus {
-    outline: 1px solid var(--logo-color);
+    outline: 1px solid var(--highlight-color);
   }
 `;
 

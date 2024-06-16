@@ -15,6 +15,7 @@ const OverviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--theme-color-bg);
   
   color: var(--theme-text-primary);
   width: 17.3em;
@@ -32,7 +33,7 @@ const OverviewContainer = styled.div`
   button {
     font-size: 1.25em;
     color: var(--text-primary);
-    background-color: transparent;
+    background-color: var(--theme-color-bg);
     border: 1px solid var(--theme-color-bg);
     cursor: pointer;
     padding: 0.25em;
@@ -46,7 +47,7 @@ const OverviewContainer = styled.div`
   }
 
   button:hover {
-    color: var(--logo-color);
+    color: var(--highlight-color);
   }
 
   button:active {
@@ -77,7 +78,7 @@ const Benchmark = styled.div`
   }
 
   .positive {
-    color: green;
+    color: var(--highlight-color);
   }
 
   .negative {

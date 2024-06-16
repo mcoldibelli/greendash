@@ -24,7 +24,7 @@ const SideNav = styled.nav`
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: var(--sidebar-bg);
+  background-color: var(--theme-color-bg);
   color: var(--theme-text-primary);
   box-shadow: var(--box-shadow);
 `;
@@ -42,7 +42,7 @@ const LogoContainer = styled.div`
 `;
 
 const CounterBadge = styled.span`
-  background-color: var(--sidebar-bg-search);
+  background-color: var(--theme-color-bg);
   padding: 0.2em 0.4em;
   border-radius: var(--border-radius);
   font-size: 0.8em;
@@ -52,6 +52,7 @@ const CounterBadge = styled.span`
 
 export const SelectedDot = styled(GoDotFill)`
   margin-right: 0.5em;
+  color: var(--highlight-color);
 `;
 
 const MenuList = styled.ul`
@@ -89,7 +90,7 @@ const MenuItem = styled.li<{ isSelected: boolean }>`
 
   svg {
     margin-right: 0.5em;
-    color: ${({ isSelected }) => (isSelected ? "var(--logo-color)" : "inherit")};
+    color: ${({ isSelected }) => (isSelected ? "var(--highlight-color)" : "inherit")};
   }
 `;
 

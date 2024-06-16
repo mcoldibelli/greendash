@@ -1,6 +1,5 @@
 import { Roboto } from "next/font/google";
 import '../styles/globals.css'
-import { SideMenu } from "../components/sideMenu";
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],

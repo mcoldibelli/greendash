@@ -1,8 +1,8 @@
 'use client'
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { SelectedDot } from "./sideMenu";
-import { FaPlus } from "react-icons/fa6";
+import { FaMoon, FaPlus, FaSun } from "react-icons/fa6";
 import { IoCloudDownloadOutline, IoFilter } from "react-icons/io5";
 import { LuCalendar } from "react-icons/lu";
 
@@ -25,6 +25,7 @@ const MenuList = styled.ul`
   padding: 0.37em;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  background-color: var(--theme-color-bg);
 `;
 
 const MenuItem = styled.li<{ isSelected: boolean }>`
@@ -68,6 +69,7 @@ const ViewContainer = styled.div`
   left: 300px;
 
   h1 {
+    color: var(--highlight-color);
     font-size: 1.8rem;
     font-weight: 500;
   }
@@ -78,6 +80,29 @@ const ViewContainer = styled.div`
     font-size: 1rem;
     padding: 0 0 0.5em;
     margin-bottom: 0.8em;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2em;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+
+  svg:nth-child(2) {
+    color: rgb(254,221,0);
+  }
+
+  svg:hover {
+    color: var(--highlight-color);
+  }
+
+  svg:active {
+    transform: scale(1.1);
   }
 `;
 
@@ -93,7 +118,7 @@ const FilterContainer = styled.span`
     padding: 0.6rem;
     margin-left: 1rem;
 
-    background-color: var(--sidebar-bg);
+    background-color: var(--theme-color-bg);
     color: var(--theme-text-primary);
     border-radius: 0.5rem;
     border: none;
@@ -128,8 +153,8 @@ const IOContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
+    background-color: var(--theme-color-bg);
+    color: var(--theme-text-primary);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -154,13 +179,13 @@ const RightContainer = styled.div`
   align-items: center;
   gap: 2.5em;
   margin-right: 2rem;
-  color: var(--sidebar-text);  
+  color: var(--theme-text-primary);  
 `;
 
 const CalendarContainer = styled.span`
   display: flex;
   align-items: center;
-  background-color: var(--sidebar-bg);
+  background-color: var(--theme-color-bg);
   padding: 0.52rem;
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
@@ -190,6 +215,7 @@ export function Header(props: HeaderProps) {
     { name: "Saved view" },
     { name: "SDR view" },
   ]);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const resource = "Sales";
 
@@ -204,35 +230,45 @@ export function Header(props: HeaderProps) {
     setSelectedMenuItem(newMenuItemName);
   }
 
-  return (
-    <TagHeader>
-      <ViewContainer>
-        <h1>{resource} overview</h1>
-        <p>Your current {resource} summary and activity</p>
-        <MenuList>
-          {menuItems.map(({ name }) => (
-            <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
-              {selectedMenuItem === name && <SelectedDot />}
-              {name}
-            </MenuItem>
-          ))}
-          <AddView onClick={handleAddViewClick}>+</AddView>
-        </MenuList>
-      </ViewContainer>
-      <RightContainer>
-        <IOContainer>
-          <button><IconContainer><IoCloudDownloadOutline /></IconContainer>Export report</button>
-          <button><IconContainer><FaPlus /></IconContainer>Invite</button>
-        </IOContainer>
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.body.classList.toggle('dark-theme', !isDarkTheme);
+  };
 
-        <FilterContainer>
-          <CalendarContainer>
-            <LuCalendar />
-            <input type="date" name="" id="" />
-          </CalendarContainer>
-          <button><IconContainer><IoFilter /></IconContainer>Filters</button>
-        </FilterContainer>
-      </RightContainer>
-    </TagHeader >
+  return (
+    <ThemeProvider theme={{ isDarkTheme }}>
+      <TagHeader>
+        <ViewContainer>
+          <span>
+            <h1>{resource} overview</h1>
+            {isDarkTheme ? <FaSun onClick={toggleTheme} /> : <FaMoon onClick={toggleTheme} />}
+          </span>
+          <p>Your current {resource} summary and activity</p>
+          <MenuList>
+            {menuItems.map(({ name }) => (
+              <MenuItem key={name} isSelected={selectedMenuItem === name} onClick={() => handleMenuItemClick(name)}>
+                {selectedMenuItem === name && <SelectedDot />}
+                {name}
+              </MenuItem>
+            ))}
+            <AddView onClick={handleAddViewClick}>+</AddView>
+          </MenuList>
+        </ViewContainer>
+        <RightContainer>
+          <IOContainer>
+            <button><IconContainer><IoCloudDownloadOutline /></IconContainer>Export report</button>
+            <button><IconContainer><FaPlus /></IconContainer>Invite</button>
+          </IOContainer>
+
+          <FilterContainer>
+            <CalendarContainer>
+              <LuCalendar />
+              <input type="date" name="" id="" />
+            </CalendarContainer>
+            <button><IconContainer><IoFilter /></IconContainer>Filters</button>
+          </FilterContainer>
+        </RightContainer>
+      </TagHeader>
+    </ThemeProvider>
   )
 }

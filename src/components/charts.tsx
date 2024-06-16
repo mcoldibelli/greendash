@@ -5,13 +5,13 @@ import db from '../utils/database.json';
 
 const ChartContainer = styled.div`
   position: absolute;
-  top: 71%;
+  top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -90%);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  width: 55.5em;
-  height: 25em;
+  width: calc(100% - 39em);
+  height: calc(100% - 24em);
   padding: 1em;
   background: var(--theme-color-bg);
 `;
@@ -28,17 +28,17 @@ const StyledHeading = styled.span`
   }
 
   button {
-    background: var(--theme-color-bg);
-    color: var(--theme-text-primary);
+    color: var(--theme-text-secondary);
     border: none;
     padding: 0.5em 1em;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: var(--box-shadow);
-
+    background-color: var(--theme-color-bg);
+    
     &:hover {
       color: var(--highlight-color);
+      box-shadow: var(--box-shadow);
     }
 
     &:active {

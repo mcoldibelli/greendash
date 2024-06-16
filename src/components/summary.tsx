@@ -16,8 +16,8 @@ const SummaryContainer = styled.div`
   gap: 1em;
   top: 10em;
   left: 19rem;
-  overflow-y: auto;
-  scrollbar-color: black var(--theme-text-secondary);
+  overflow-y: scroll;
+  scrollbar-color: #909090 white;
   scrollbar-width: thin;
 `;
 

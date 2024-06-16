@@ -1,5 +1,6 @@
 "use client";
 
+import styled from "styled-components";
 import { Activity } from "../../components/activity";
 import { Charts } from "../../components/charts";
 import { Header } from "../../components/header";
@@ -11,13 +12,11 @@ export default function Dashboard() {
 
   return (
     <RootLayout>
-      <main>
-        <Header />
-        <SideMenu />
-        <Summary />
-        <Charts />
-        <Activity />
-      </main>
-    </RootLayout>
+      <Header />
+      <SideMenu />
+      <Summary />
+      <Charts />
+      <Activity />
+    </RootLayout >
   );
 }

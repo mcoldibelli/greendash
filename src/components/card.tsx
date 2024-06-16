@@ -20,7 +20,7 @@ const ProfileImage = styled(Image)`
 
   &:hover {
     cursor: pointer;
-    border: 2px solid var(--logo-color);
+    border: 2px solid var(--highlight-color);
     transition: 0.15s;
   }
 `;

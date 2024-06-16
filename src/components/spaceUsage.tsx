@@ -14,7 +14,7 @@ const SpaceUsageContainer = styled.div`
   align-items: center;
   
   background-color: var(--theme-color-bg);
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   box-shadow: var(--box-shadow);
 
   p {
@@ -28,17 +28,17 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledButton = styled.button`
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   border: none;
   padding: 0.4em 0.8em;
   border-radius: var(--border-radius);
   font-size: 0.9em;
-
+  background-color: var(--theme-color-bg);
+  
   &:hover {
     cursor: pointer;
-    background-color: var(--logo-color);
-    box-shadow: var(--box-shadow);
     color: var(--highlight-color);
+    box-shadow: var(--box-shadow);
   }
 
   &:active {

@@ -9,6 +9,7 @@ const ActivityContainer = styled.aside`
   top: 10.5em;
   width: 18em;
   height: calc(100vh - 10em);
+  background-color: var(--theme-color-bg);
   
   overflow-y: auto;
   border-radius: 0.5em 0 0 0;
@@ -38,6 +39,7 @@ const ActivityHeader = styled.span`
   }
   
   button {
+    background-color: var(--theme-color-bg);
     color: var(--theme-text-secondary);
     border: none;
     padding: 0.5em;
