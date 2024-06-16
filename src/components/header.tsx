@@ -115,7 +115,7 @@ const FilterContainer = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.8em 1em;
     margin-left: 1rem;
 
     background-color: var(--theme-color-bg);
@@ -155,7 +155,7 @@ const IOContainer = styled.div`
     justify-content: center;
     background-color: var(--theme-color-bg);
     color: var(--theme-text-primary);
-    padding: 0.5rem 1rem;
+    padding: 0.8em 1em;
     border-radius: 0.5rem;
     cursor: pointer;
     margin-left: 1rem;
@@ -186,7 +186,7 @@ const CalendarContainer = styled.span`
   display: flex;
   align-items: center;
   background-color: var(--theme-color-bg);
-  padding: 0.52rem;
+  padding: 0.58em;
   border-radius: 0.5rem;
   box-shadow: var(--box-shadow);
 
