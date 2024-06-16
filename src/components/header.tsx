@@ -9,7 +9,7 @@ import { LuCalendar } from "react-icons/lu";
 interface HeaderProps { }
 
 const TagHeader = styled.header`
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   height: 130px;

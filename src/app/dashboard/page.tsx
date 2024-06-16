@@ -8,15 +8,26 @@ import { SideMenu } from "../../components/sideMenu";
 import { Summary } from "../../components/summary";
 import RootLayout from "../layout";
 
+const TagContainer = styled.div`
+position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 1000px;
+  min-height: 550px;
+  background-color: rgb(230, 230, 230);
+`;
+
 export default function Dashboard() {
 
   return (
     <RootLayout>
-      <Header />
-      <SideMenu />
-      <Summary />
-      <Charts />
-      <Activity />
+      <TagContainer>
+        <Header />
+        <SideMenu />
+        <Summary />
+        <Charts />
+        <Activity />
+      </TagContainer>
     </RootLayout >
   );
 }
