@@ -73,17 +73,17 @@ export function Charts() {
           tickValues={data.map((_, i) => i + 1)}
           tickFormat={db.sales_report.map(item => item.month)}
           style={{
-            axis: { stroke: "#756f6a" },
-            tickLabels: { fill: "#756f6a", fontSize: 16, padding: 5 }
+            axis: { stroke: "var(--theme-color-primary)" },
+            tickLabels: { fill: "var(--theme-color-primary)", fontSize: 16, padding: 5 }
           }}
         />
         <VictoryAxis
           dependentAxis
           tickFormat={(x) => (`$${x / 1000}k`)}
           style={{
-            axis: { stroke: "#756f6a" },
+            axis: { stroke: "var(--theme-color-primary)" },
             grid: { stroke: "#e6e6e6" },
-            tickLabels: { fill: "#756f6a", fontSize: 18, padding: 5 }
+            tickLabels: { fill: "var(--theme-color-primary)", fontSize: 18, padding: 5 }
           }}
         />
         <VictoryBar
