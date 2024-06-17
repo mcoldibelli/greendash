@@ -1,6 +1,6 @@
-# Dashboard - Greendash 🚧 In-progress
+# Dashboard - Greendash
 
-## Description
+## Description 👉🏼 [LIVE PREVIEW](https://greendash-dashboard-react-next-styled-components.vercel.app/dashboard)
 
 Greendash is a web app designed to present a variety of fictional data in an intuitive and interactive format.
 
