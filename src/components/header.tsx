@@ -57,8 +57,7 @@ const AddView = styled.li`
   &:hover {
     color: var(--highlight-color);
     border: 1px solid var(--highlight-color);
-    transform: scale(1.1);
-    transition: all 0.2s;
+    transition: all 0.3s;
   }
 `;
 
