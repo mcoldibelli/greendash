@@ -14,7 +14,7 @@ position: absolute;
   height: 100%;
   min-width: 1000px;
   min-height: 550px;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(40, 45, 40);
 `;
 
 export default function Dashboard() {
