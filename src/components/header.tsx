@@ -68,7 +68,7 @@ const ViewContainer = styled.div`
   left: 300px;
 
   h1 {
-    color: var(--highlight-color);
+    color: rgb(255,255,255);
     font-size: 1.8rem;
     font-weight: 500;
   }
