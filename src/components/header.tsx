@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { SelectedDot } from "./sideMenu";
 import { FaMoon, FaPlus, FaSun } from "react-icons/fa6";
 import { IoCloudDownloadOutline, IoFilter } from "react-icons/io5";
-import { LuCalendar } from "react-icons/lu";
+import DateRangePicker from "./dateRangePicker";
 
 const TagHeader = styled.header`
   position: absolute;
@@ -14,8 +14,21 @@ const TagHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 `;
+
+const ThemeIconContainer = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // Theme icon
+  svg {
+    cursor: pointer;
+    font-size: 2em;
+    color: rgb(255,203,0);
+  }
+`;
+
 const ViewContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,22 +75,79 @@ const AddView = styled.button`
     border: 2px solid var(--highlight-color);
   }
 `;
-const RightContainer = styled.div``;
-const IOContainer = styled.div``;
-const IconContainer = styled.span``;
-const FilterContainer = styled.div``;
-const CalendarContainer = styled.div``;
 
-const ThemeIconContainer = styled.span`
+const RightContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5em;
+  
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    background-color: transparent;
+    color: ${({ theme }) => theme.isDarkTheme ? "var(--dark-text)" : "var(--light-text)"};
+    padding: 0.5em 1em;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: ${({ theme }) => theme.isDarkTheme ? "var(--dark-text-hover)" : "var(--light-text-hover)"};
+      border: 2px solid var(--highlight-color);
+    }
+  }
+`;
+
+const IOContainer = styled.div`
+  display: flex;
+  gap: 1em;
+
+  button {
+    display: flex;
+    align-items: center;
+    background-color: var(--theme-color-bg);
+    box-shadow: var(--box-shadow);
+  }
+
+  button:hover {
+    background-color: var(--theme-color-bg-secondary);
+  }
+`;
+
+const IconContainer = styled.span`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 1.325em;
 
-  // Theme icon
-  svg {
-    cursor: pointer;
-    font-size: 2em;
-    color: rgb(255,203,0);
+  button {
+    display: flex;
+    align-items: center;
+    background-color: var(--theme-color-bg);
+    box-shadow: var(--box-shadow);
+  }
+
+  button:hover {
+    background-color: var(--theme-color-bg-hover);
+  }
+
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--theme-color-bg);
+    box-shadow: var(--box-shadow);
   }
 `;
 
@@ -136,15 +206,12 @@ export function Header() {
           </IOContainer>
 
           <FilterContainer>
-            <CalendarContainer>
-              <LuCalendar />
-              <input type="date" />
-            </CalendarContainer>
+            <DateRangePicker />
             <button><IconContainer><IoFilter /></IconContainer>Filters</button>
           </FilterContainer>
         </RightContainer>
 
       </TagHeader>
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }
