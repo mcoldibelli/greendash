@@ -99,12 +99,21 @@ const RightContainer = styled.div`
       color: ${({ theme }) => theme.isDarkTheme ? "var(--dark-text-hover)" : "var(--light-text-hover)"};
       border: 2px solid var(--highlight-color);
     }
+
+    &:active {
+      scale: 0.95;
+    }
   }
 `;
 
 const IOContainer = styled.div`
   display: flex;
   gap: 1em;
+
+  :nth-child(2) {
+    color: var(--theme-color-secondary);
+    background-color: var(--highlight-color);
+  }
 
   button {
     display: flex;
