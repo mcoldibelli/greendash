@@ -202,7 +202,12 @@ export function Header() {
         <RightContainer>
           <IOContainer>
             <button><IconContainer><IoCloudDownloadOutline /></IconContainer>Export report</button>
-            <button><IconContainer><FaPlus /></IconContainer>Invite</button>
+            <button>
+              <IconContainer>
+                <FaPlus />
+              </IconContainer>
+              Invite
+            </button>
           </IOContainer>
 
           <FilterContainer>
