@@ -21,6 +21,7 @@ const StyledInput = styled.input`
   padding: 0.8em;
   width: 100%;
   border-radius: var(--border-radius);
+  color: var(--theme-color-text);
   
   &:focus {
     outline: 1px solid var(--highlight-color);
