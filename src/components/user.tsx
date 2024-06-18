@@ -9,8 +9,8 @@ const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  border-radius: var(--border-radius);
+
+  border-top: 1px solid rgba(160,160,160,0.7);
 
   img:hover {
     transform: scale(1.1);

@@ -4,8 +4,9 @@ import { VictoryPie } from 'victory';
 
 const SpaceUsageContainer = styled.div`
   position: relative;
-  height: 11em;
+  height: 12em;
   padding: 0.5em;
+  bottom: 5%;
   border-radius: var(--border-radius);
   
   display: flex;
@@ -82,7 +83,7 @@ export function SpaceUsage({ usage }: { usage: number }) {
               { x: "", y: usage },
               { x: "", y: 100 - usage },
             ]}
-            colorScale={["#e6e6e6", "#000000"]}
+            colorScale={["var(--theme-color-primary)", "var(--theme-bg)"]}
             innerRadius={80}
             height={200}
             labels={() => null}

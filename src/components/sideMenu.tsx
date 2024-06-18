@@ -23,7 +23,6 @@ const SideNav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   background-color: var(--theme-color-bg);
   color: var(--theme-text-primary);
   box-shadow: var(--box-shadow);
@@ -40,7 +39,6 @@ const LogoContainer = styled.div`
     color: var(--highlight-color);
   }
 `;
-
 const CounterBadge = styled.span`
   background-color: var(--theme-color-bg);
   padding: 0.2em 0.4em;
@@ -58,11 +56,6 @@ export const SelectedDot = styled(GoDotFill)`
 const MenuList = styled.ul`
   list-style: none;
   margin: 1em  0;
-
-  span {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 const MenuItem = styled.li<{ isSelected: boolean }>`
@@ -70,7 +63,7 @@ const MenuItem = styled.li<{ isSelected: boolean }>`
   align-items: center;
   
   margin: 0.5em 0;
-  padding: 0.4em;
+  padding: 0.5em;
   border-radius: var(--border-radius);
   
   cursor: pointer;
@@ -99,7 +92,7 @@ const MainMenu = styled.div`
 `;
 
 const BottomMenu = styled.div`
-  margin-bottom: 0;
+  margin-bottom: 2.5em;
 `;
 
 export function SideMenu() {
