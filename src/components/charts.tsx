@@ -5,13 +5,13 @@ import db from '../utils/database.json';
 
 const ChartContainer = styled.div`
   position: absolute;
-  top: 90%;
+  top: 92%;
   left: 50%;
   transform: translate(-50%, -90%);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   width: calc(100% - 39em);
-  height: calc(100% - 24em);
+  height: calc(100% - 22em);
   padding: 1em;
   background: var(--theme-color-bg);
 `;
@@ -20,7 +20,6 @@ const StyledHeading = styled.span`
   display: flex;
   text-align: center;
   justify-content: space-between;
-
   
   h1 {
     color: var(--text-color);
@@ -102,7 +101,7 @@ export function Charts() {
               eventHandlers: {
                 onMouseOver: () => ({
                   target: "data",
-                  mutation: (props) => ({ style: { ...props.style, fill: "orange" } })
+                  mutation: (props) => ({ style: { ...props.style, fill: "#ffcb00" } })
                 }),
                 onMouseOut: () => ({
                   target: "data",

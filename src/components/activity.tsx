@@ -6,7 +6,7 @@ import { CardProps } from "../utils/types";
 const ActivityContainer = styled.aside`
   position: absolute;
   right: 0;
-  top: 10.5em;
+  top: 11em;
   width: 18em;
   height: calc(100vh - 10em);
   background-color: var(--theme-color-bg);

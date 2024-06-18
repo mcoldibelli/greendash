@@ -6,18 +6,17 @@ import { summaryCards } from '../utils/mocks';
 
 const SummaryContainer = styled.div`
   position: absolute;
-  height: 10rem;
-  
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+  height: 11em;
   width: calc(100% - 38em);
   border-radius: var(--border-radius);
-  padding: 0.5em;
+  padding: 1em;
   gap: 1em;
-  top: 10em;
-  left: 19rem;
+  top: 9em;
+  left: 18.5em;
   overflow-y: scroll;
-  scrollbar-color: #909090 white;
+  scrollbar-color: var(--highlight-color) var(--theme-bg);
   scrollbar-width: thin;
 `;
 
